@@ -43,8 +43,9 @@ header p {
 /* Secciones */
 .seccion {
     padding: 40px 20px;
-    margin:  auto;
+    margin: auto;
     max-width: 800px;
+    overflow: hidden; /* Oculta el desbordamiento del carrusel */
 }
 
 .seccion h2 {
@@ -54,14 +55,72 @@ header p {
 }
 
 /* Galería de fotos */
-.fotos {
+.perfiles {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 25px;
     flex-wrap: wrap;
 }
+.perfiles img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+.perfiles img:hover {
+    transform: scale(1.1);
+}
+.dibujos {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+.dibujos img{
+    width: 175px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+.dibujos img:hover {
+    transform: scale(1.1);
+}
 
-.fotos img {
+/* Contenedor del carrusel */
+.carrusel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.fotos {
+    display: flex;
+    gap: 25px;
+    animation: rotar 20s linear infinite; /* Animación de rotación */
+    width: max-content; /* Asegura que el contenedor tenga el ancho necesario */
+}
+
+/* Animación de rotación */
+@keyframes rotar {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Desplaza solo hasta la mitad del ancho total */
+    }
+}
+
+/* Cada item (imagen + descripción) */
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.item img {
     width: 150px;
     height: 150px;
     object-fit: cover;
@@ -69,9 +128,26 @@ header p {
     transition: transform 0.3s ease;
 }
 
-.fotos img:hover {
+.item img:hover {
     transform: scale(1.1);
 }
+
+.item p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #b8b6b6;
+}
+
+/* Animación de rotación */
+@keyframes rotar {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 
 /* Mensaje */
 #mensaje p {
@@ -103,7 +179,7 @@ header p {
 
 /* Footer */
 footer {
-    background-color: var(--color-secundario);
+    background-color: var(--color-primario);
     color: var(--color-texto-claro);
     padding: 15px;
     font-size: 0.9rem;
