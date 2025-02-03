@@ -21,7 +21,7 @@ body {
 
 /* Header con imagen de fondo */
 header {
-    background-image: url('fotitos/fondo.jpg'); /* Ruta de la imagen */
+    background-image: url('/fotitos/fondo.jpg'); /* Ruta de la imagen */
     background-size: cover; /* Cubre todo el espacio del header */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
