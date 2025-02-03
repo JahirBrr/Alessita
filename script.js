@@ -1,4 +1,3 @@
-// Fecha de inicio (10 de enero de 2025)
 const startDate = new Date("2025-01-10T17:23:00").getTime();
 
 const countUpFunction = setInterval(() => {
@@ -14,3 +13,14 @@ const countUpFunction = setInterval(() => {
         `${days} dias ${hours} horas ${minutes} minutos ${seconds} segundos`;
 
 }, 1000);
+
+
+const carrusel = document.querySelector('.fotos');
+
+carrusel.addEventListener('mouseenter', () => {
+    carrusel.style.animationPlayState = 'paused';
+});
+
+carrusel.addEventListener('mouseleave', () => {
+    carrusel.style.animationPlayState = 'running';
+});
