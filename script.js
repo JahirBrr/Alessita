@@ -17,13 +17,6 @@ const countUpFunction = setInterval(() => {
 
 const carrusel = document.querySelector('.fotos');
 
-carrusel.addEventListener('mouseenter', () => {
-    carrusel.style.animationPlayState = 'paused';
-});
-
-carrusel.addEventListener('mouseleave', () => {
-    carrusel.style.animationPlayState = 'running';
-});
 
 
 document.getElementById("boton-sorpresa").addEventListener("click", function() {
