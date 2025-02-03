@@ -177,6 +177,48 @@ header p {
     color: var(--color-secundario);
 }
 
+/* Estilos para la alerta */
+.alerta {
+    display: none; /* Oculta por defecto */
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-primario); /* Rojo */
+    color: var(--color-texto-claro);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 250px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.alerta-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alerta-cerrar {
+    font-size: 28px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.alerta-cerrar:hover {
+    color: #ddd;
+}
+
+/* Estilo de texto */
+#texto-alerta {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+
 /* Footer */
 footer {
     background-color: var(--color-primario);
