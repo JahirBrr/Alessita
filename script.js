@@ -24,3 +24,27 @@ carrusel.addEventListener('mouseenter', () => {
 carrusel.addEventListener('mouseleave', () => {
     carrusel.style.animationPlayState = 'running';
 });
+
+
+document.getElementById("boton-sorpresa").addEventListener("click", function() {
+    fetch('frases.json')
+        .then(response => response.json())
+        .then(frases => {
+            // Seleccionar una frase aleatoria
+            const randomIndex = Math.floor(Math.random() * frases.length);
+            const randomFrase = frases[randomIndex];
+            
+            // Mostrar la frase en el mensaje de la alerta
+            document.getElementById("texto-alerta").textContent = randomFrase;
+            
+            // Mostrar la alerta
+            document.getElementById("miAlerta").style.display = "block";
+        })
+        .catch(error => console.error('Error al obtener las frases:', error));
+});
+
+// Cerrar la alerta cuando se hace clic en la X
+document.getElementById("alerta-cerrar").addEventListener("click", function() {
+    document.getElementById("miAlerta").style.display = "none";
+});
+
